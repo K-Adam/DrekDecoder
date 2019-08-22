@@ -1,0 +1,8 @@
+
+.git
+
+# Dependency
+node_modules/
+
+# Test
+images/
