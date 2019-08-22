@@ -1,5 +1,10 @@
 # DrekDecoder
 
+## Installation
+```
+npm i drek-decoder
+```
+
 ## Usage
 
 ### Command line interface:
