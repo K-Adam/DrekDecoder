@@ -62,6 +62,9 @@ module.exports = class FileReader {
         frame.width = xs;
         frame.height = ys;
 
+        frame.offsetx = data.readInt32LE(0x001C);
+        frame.offsety = data.readInt32LE(0x0020);
+
         const scanline_start = 0x0068;
         const scanline_size = ys * 4;
 
