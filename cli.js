@@ -69,7 +69,7 @@ switch (command) {
                 outputs.forEach(([frame, path]) => {
                     let canvas = frame.generateImageData();
 
-                    Decoder.writePng(path, canvas).then(() => {
+                    Decoder.writePng(canvas, path).then(() => {
                             console.log("File saved");
                         })
                         .catch(error => console.error(error.message));

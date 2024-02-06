@@ -18,7 +18,7 @@ module.exports = class FrameDecoder {
     generateImageData() {
 
         let canvas = new Canvas(this.frame.width, this.frame.height);
-        let painter = new CanvasPainter(canvas, this.frame.image.palette);
+        let painter = new CanvasPainter(canvas, this.frame.image.palette, this.frame.image.teamColorCount);
 
         // Start of the algorithm
         for (let y = 0; y < this.frame.height; y++) {

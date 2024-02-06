@@ -22,7 +22,7 @@ Decoder.readFile('./IMG.DRK')
         let selected_frame = 0;
         let canvas = img.frames[selected_frame].generateImageData();
 
-        Decoder.writePng('./img.png', canvas).then(() => {
+        Decoder.writePng(canvas, './img.png').then(() => {
             console.log("File saved");
         });
 

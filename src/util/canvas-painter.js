@@ -1,9 +1,11 @@
 module.exports = class CanvasPainter {
 
-    constructor(canvas, palette) {
+    constructor(canvas, palette, teamColorCount) {
         this.canvas = canvas;
 
         this.palette = palette;
+
+        this.teamColorCount = teamColorCount;
 
         this.x = 0;
         this.y = 0;
@@ -14,7 +16,9 @@ module.exports = class CanvasPainter {
             g = this.palette[palette_index * 3 + 1],
             b = this.palette[palette_index * 3 + 0];
 
-        this.canvas.setPixel(this.x, this.y, [r, g, b, a]);
+        let isTeamColor = (255-palette_index) < this.teamColorCount;
+
+        this.canvas.setPixel(this.x, this.y, [r, g, b, a], isTeamColor);
         this.step();
     }
 

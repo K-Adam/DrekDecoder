@@ -6,6 +6,8 @@ module.exports = class Image {
 
         this.palette = null;
 
+        this.teamColorCount = 0;
+
     }
 
     getInfo() {

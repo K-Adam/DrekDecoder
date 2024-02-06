@@ -48,22 +48,27 @@ module.exports = class FileReader {
     readPalette(image) {
         const palette_offset = this.data.readInt32LE(0x0054);
         const palette_size = 3 * 256;
+        const team_color_count = 16;//this.data.readInt16LE(0x002a) / 3;
 
         image.palette = this.data.slice(palette_offset, palette_offset + palette_size);
+
+        image.teamColorCount = team_color_count;
     }
 
     readFrame(img, data) {
 
         let xs = data.readInt32LE(0x0014);
         let ys = data.readInt32LE(0x0018);
+        let xo = data.readInt32LE(0x001c);
+        let yo = data.readInt32LE(0x0020);
 
         let frame = new Frame(img);
 
         frame.width = xs;
         frame.height = ys;
 
-        frame.offsetx = data.readInt32LE(0x001C);
-        frame.offsety = data.readInt32LE(0x0020);
+        frame.offsetX = xo;
+        frame.offsetY = yo;
 
         const scanline_start = 0x0068;
         const scanline_size = ys * 4;

@@ -7,8 +7,8 @@ module.exports = class Frame {
         this.width = 0;
         this.height = 0;
 
-        this.offsetx = 0;
-        this.offsety = 0;
+        this.offsetX = 0;
+        this.offsetY = 0;
 
         this.scanLineOffsets = null;
         this.data = null;
@@ -26,9 +26,8 @@ module.exports = class Frame {
         return {
             width: this.width,
             height: this.height,
-
-            offsetx: this.offsetx,
-            offsety: this.offsety
+            offsetX: this.offsetX,
+            offsetY: this.offsetY
         };
     }
 
